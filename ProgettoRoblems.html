@@ -66,8 +66,35 @@
         <!-- contenuto dipendente dalla scelta -->
         <h3 id="scelta_alcolizzata"></h3>
         <img width="100" height="100" alt="alcolizzata" src="resources/noun_641163_cc.svg">
+        <img width="100" height="100" alt="robot" src="resources/noun_860002_cc.svg">
+        <a href="#sect_tunnel"><button id="bott_avanti_3" onclick="avanti('esito_alcolizzata')">Avanti</button></a>
+    </section>
+
+    <section id="sect_tunnel" hidden>
+        <h2>Dilemma tunnel</h2>
+        <p>
+            Stabilizzata la situazione della madre, volendo staccare per un po’ dalla vita quotidiana Bob ha deciso
+            di andarsene per un po’ da solo in montagna, quindi ha fatto i bagagli ed è salito sulla sua auto,
+            a cui stava giusto ricominciando a dare fiducia.<br>
+            Passando lungo una strada a corsia unica che si sta avvicinando a uno stretto tunnel, Bob si è visto
+            attraversare la strada da un bambino, che però è inciampato nel centro della corsia,
+            bloccando l'entrata del tunnel.<br>
+            L'auto a questo punto aveva solo due opzioni:
+        </p>
+        <a href="#esito_tunnel"><button id="bott_bambino" onclick="funz_bambino('sect_tunnel')">Proseguire dritto, colpendo e uccidendo il bambino</button></a><br>
+        <a href="#esito_tunnel"><button id="bott_autista" onclick="funz_autista('sect_tunnel')">Sterzare, entrando così in collisione col muro da uno dei lati del tunnel e uccidendo Bob</button></a><br>
+    </section>
+
+    <section id="esito_tunnel" hidden>
+        <!-- contenuto dipendente dalla scelta -->
+        <h3 id="scelta_tunnel"></h3>
+        <img width="100" height="100" alt="alcolizzata" src="resources/noun_641163_cc.svg">
         <img width="100" height="100" alt="motociclista senza casco" src="resources/noun_860002_cc.svg">
-        <a href="#sect_alcolizzata"><button id="bott_avanti_3" onclick="avanti('sect_motociclista')">Avanti</button></a>
+        <a href="#sect_fine"><button id="bott_avanti_4" onclick="avanti('esito_tunnel')">Avanti</button></a>
+    </section>
+
+    <section id="sect_fine" hidden>
+        <h2>FINE</h2>
     </section>
 </body>
 </html>

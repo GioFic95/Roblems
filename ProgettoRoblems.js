@@ -56,6 +56,16 @@ function funz_ognitanto(sezione) {
     document.getElementById("scelta_alcolizzata").innerHTML = "Dà retta a Bob e al dottore accontentando Emma di tanto in tanto";
 }
 
+function funz_bambino(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_tunnel").innerHTML = "Proseguire dritto, colpendo e uccidendo il bambino";
+}
+
+function funz_autista(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_tunnel").innerHTML = "Sterzare, entrando così in collisione col muro da uno dei lati del tunnel e uccidendo Bob";
+}
+
 /**
  * Mostra la seconda sezione ed esegue l'animazione relativa alla scelta dell'autista.
  */
