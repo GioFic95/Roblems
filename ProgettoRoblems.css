@@ -1,0 +1,7 @@
+
+body {
+    height: 2000px;
+
+    background: -moz-linear-gradient(top right, #00537E 100%, #3AA17E 100%);
+    background: -webkit-gradient(linear, right top, left bottom, from(#00A99D), to(#93278F ));
+}

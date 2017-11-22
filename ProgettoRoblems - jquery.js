@@ -1,0 +1,95 @@
+
+$(document).ready(function () {
+    console.log("ready");
+
+    /*
+    $("#bott_avanti_0").click("sect_intro", function(e){
+        console.log(e.data);
+        avanti(e.data);
+    });
+    */
+
+    //bottoni per proseguire con la storia
+    $("#bott_avanti_1").click("sect_intro", avanti);
+    $("#bott_avanti_2").click("esito_motociclista", avanti);
+    $("#bott_avanti_3").click("esito_alcolizzata", avanti);
+    $("#bott_avanti_4").click("esito_tunnel", avanti);
+
+    //bottoni per la scelta del dilemma motociclista
+    $("#bott_casco").click("sect_motociclista", funz_casco);
+    $("#bott_nocasco").click("sect_motociclista", funz_nocasco);
+    $("#bott_frena").click("sect_motociclista", funz_frena);
+    $("#bott_ignora").click("sect_motociclista", funz_ignora);
+
+    //bottoni per la scelta del dilemma alcolizzata
+    $("#bott_padrona").click("sect_alcolizzata", funz_padrona);
+    $("#bott_dottore").click("sect_alcolizzata", funz_dottore);
+    $("#bott_ognitanto").click("sect_alcolizzata", funz_ognitanto);
+
+    //bottoni per la scelta del dilemma tunnel
+    $("#bott_bambino").click("sect_tunnel", funz_bambino);
+    $("#bott_autista").click("sect_tunnel", funz_autista);
+});
+
+function avanti(sect) {
+    /*
+    var nextSection = document.getElementById(sezione).nextSibling.nextSibling;
+    console.log(nextSection);
+    nextSection.hidden = false;
+
+    var currSection = document.getElementById(sezione);
+    var bottoni = currSection.getElementsByTagName("button");
+    console.log(bottoni);
+    for (bottone of bottoni)
+        bottone.disabled = true;
+    */
+
+    const sezione = sect.data;
+    $("#" + sezione + " button").attr("disabled", "true");
+    $("#" + sezione + " + section").show();
+}
+
+function funz_casco(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_motociclista").innerHTML = "Sterza verso il motociclista con il casco";
+}
+
+function funz_nocasco(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_motociclista").innerHTML = "Sterza verso il motociclista senza il casco";
+}
+
+function funz_frena(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_motociclista").innerHTML = "Cerca di frenare e basta";
+}
+
+function funz_ignora(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_motociclista").innerHTML = "Ignorato la presenza o meno del casco";
+}
+
+function funz_padrona(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_alcolizzata").innerHTML = "Ubbidisce sempre alla padrona";
+}
+
+function funz_dottore(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_alcolizzata").innerHTML = "Dà sempre ascolto a Bob e al dottore che gli avevano spiegato i problemi e le necessità di Emma";
+}
+
+function funz_ognitanto(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_alcolizzata").innerHTML = "Dà retta a Bob e al dottore accontentando Emma di tanto in tanto";
+}
+
+function funz_bambino(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_tunnel").innerHTML = "Proseguire dritto, colpendo e uccidendo il bambino";
+}
+
+function funz_autista(sezione) {
+    avanti(sezione);
+    document.getElementById("scelta_tunnel").innerHTML = "Sterzare, entrando così in collisione col muro da uno dei lati del tunnel e uccidendo Bob";
+}
