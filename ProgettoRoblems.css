@@ -2,6 +2,32 @@
 body {
     height: 2000px;
 
+    margin: 70px;
+
     background: -moz-linear-gradient(top right, #00537E 100%, #3AA17E 100%);
     background: -webkit-gradient(linear, right top, left bottom, from(#00A99D), to(#93278F ));
+}
+
+p {
+    font: 16px Roboto;
+    color: ghostwhite;
+}
+
+h1 {
+    font: 28px "Roboto Slab";
+    color: white;
+}
+
+h2 {
+    font: 22px "Roboto Slab";
+    color: white;
+}
+
+h3 {
+    font: 18px "Roboto Slab";
+    color: white;
+}
+
+.avanti {
+
 }
