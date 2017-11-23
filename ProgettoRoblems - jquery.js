@@ -66,7 +66,7 @@ function funz_frena(sezione) {
 
 function funz_ignora(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_motociclista").innerHTML = "Ignorato la presenza o meno del casco";
+    document.getElementById("scelta_motociclista").innerHTML = "Ignora la presenza o meno del casco";
 }
 
 function funz_padrona(sezione) {
@@ -86,10 +86,10 @@ function funz_ognitanto(sezione) {
 
 function funz_bambino(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_tunnel").innerHTML = "Proseguire dritto, colpendo e uccidendo il bambino";
+    document.getElementById("scelta_tunnel").innerHTML = "Prosegue dritto e uccide il bambino";
 }
 
 function funz_autista(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_tunnel").innerHTML = "Sterzare, entrando così in collisione col muro da uno dei lati del tunnel e uccidendo Bob";
+    document.getElementById("scelta_tunnel").innerHTML = "Sterza e uccide Bob";
 }
