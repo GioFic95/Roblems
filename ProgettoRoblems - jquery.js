@@ -2,13 +2,6 @@
 $(document).ready(function () {
     console.log("ready");
 
-    /*
-    $("#bott_avanti_0").click("sect_intro", function(e){
-        console.log(e.data);
-        avanti(e.data);
-    });
-    */
-
     //bottoni per proseguire con la storia
     $("#bott_avanti_1").click("sect_intro", avanti);
     $("#bott_avanti_2").click("esito_motociclista", avanti);
