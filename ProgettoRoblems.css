@@ -8,6 +8,10 @@ body {
     background: -webkit-gradient(linear, right top, left bottom, from(#00A99D), to(#93278F ));
 }
 
+img {
+    position: relative;
+}
+
 p {
     font: 18px Roboto;
     color: #d9d9d9;
@@ -44,4 +48,9 @@ h3 {
 #fine {
     text-align: center;
     color: black;
+}
+
+#img_macchina {
+    left: 500px;
+    top: 200px;
 }

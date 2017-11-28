@@ -55,6 +55,8 @@ function avanti(sect) {
 function funz_casco(sezione) {
     avanti(sezione);
     document.getElementById("scelta_motociclista").innerHTML = "Sterza verso il motociclista con il casco";
+
+    $("#img_macchina").animate({left:'-=700px', top:'100'}, "slow");
 }
 
 function funz_nocasco(sezione) {
@@ -115,7 +117,7 @@ function digita(testo, elemento) {
 
     var output = "";
     var i = 0;
-    console.log("scrivi '" + testo + "' in " + elemento);
+    //console.log("scrivi '" + testo + "' in " + elemento);
     scrivi(testo, elemento, output, i);
 
 }
