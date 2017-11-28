@@ -14,10 +14,15 @@ p {
 }
 
 h1 {
-    font: 72px "Roboto Slab";
+    font: 72px "Roboto";
     color: black;
     text-align: center;
     margin-bottom: 50px;
+}
+
+#rob {
+    font: 72px "Roboto Slab";
+    color: #5d5d5d;
 }
 
 h2 {

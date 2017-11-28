@@ -1,4 +1,9 @@
 
+const speed = 70;
+var testi;
+var lingua = "italiano";
+parseTesti();
+
 $(document).ready(function () {
     console.log("ready");
 
@@ -22,6 +27,11 @@ $(document).ready(function () {
     //bottoni per la scelta del dilemma tunnel
     $("#bott_bambino").click("sect_tunnel", funz_bambino);
     $("#bott_autista").click("sect_tunnel", funz_autista);
+
+    //const testo = "Sempre caro mi fu quest'ermo colle.";
+    //digita(testo, "#prova");
+
+    digita(testi[lingua].sect_intro, "#sect_intro p");
 });
 
 function avanti(sect) {
@@ -85,4 +95,39 @@ function funz_bambino(sezione) {
 function funz_autista(sezione) {
     avanti(sezione);
     document.getElementById("scelta_tunnel").innerHTML = "Sterza e uccide Bob";
+}
+
+function digita(testo, elemento) {
+
+    function scrivi(testo, elemento, output, i) {
+        var next = testo.charAt(i);
+        if (next === '<') {
+            next = "<br>";
+            i+=4;
+        } else
+            i++;
+        output += next;
+        $(elemento).html(output);
+        if(i < testo.length) {
+            setTimeout(scrivi, speed, testo, elemento, output, i);
+        }
+    }
+
+    var output = "";
+    var i = 0;
+    console.log("scrivi '" + testo + "' in " + elemento);
+    scrivi(testo, elemento, output, i);
+
+}
+
+function parseTesti() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            testi = JSON.parse(this.responseText);
+            //console.log(testi);
+        }
+    };
+    xmlhttp.open("GET", "./resources/testi.json", true);
+    xmlhttp.send();
 }
