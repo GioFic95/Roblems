@@ -130,6 +130,7 @@ function parseTesti() {
             //console.log(testi);
         }
     };
-    xmlhttp.open("GET", "./resources/testi.json", true);
+    //il terzo parametro è false perché ci serve di avere l'oggetto testi prima di proseguire con le altre operazioni.
+    xmlhttp.open("GET", "./resources/testi.json", false);
     xmlhttp.send();
 }
