@@ -1,7 +1,34 @@
 {
   "italiano": {
-    "sect_intro": "Siamo nel 2050.<br>Bob, da ormai 15 anni, lavora in una grande azienda che produce robot, si è conquistato una buona posizione e conosce tutto quello che una persona può sperare di imparare sui robot in una sola vita.<br>Nonostante la sua esperienza, spesso le decisioni delle intelligenze artificiali lo lasciano perplesso e dubbioso.<br>Tu come vorresti che si comportasse l’IA in queste situazioni?"
+    "p": {
+      "sect_intro": "Siamo nel 2050.<br>Bob, da ormai 15 anni, lavora in una grande azienda che produce robot, si è conquistato una buona posizione e conosce tutto quello che una persona può sperare di imparare sui robot in una sola vita.<br>Nonostante la sua esperienza, spesso le decisioni delle intelligenze artificiali lo lasciano perplesso e dubbioso.<br>Tu come vorresti che si comportasse l’IA in queste situazioni?",
+      "sect_motociclista": "Qualche settimana fa, mentre come ogni mattina si stava facendo portare a lavoro dalla sua macchina a guida autonoma, è passato su un chiodo e uno pneumatico è scoppiato.<br>Davanti a lui c’erano due motociclisti: uno con il casco e uno senza. Se la macchina avesse sterzato a sinistra avrebbe colpito il primo e se avesse sterzato a destra avrebbe preso il secondo.<br>Nella frazione di secondo tra lo scoppio dello pneumatico e l’impatto con il motociclista Bob si è chiesto cosa avrebbe fatto la macchina:",
+      "sect_alcolizzata": "Quando si era appena ripreso dallo spavento e dalla preoccupazione che gli aveva lasciato l’incidente, Bob si è trovato davanti a un altro problema: il medico che ha in cura sua madre Emma gli ha consigliato  di affiancarle un robot che si prenda cura di lei, perché non è più autonoma e ha bisogno di aiuto quando i figli non sono disponibili.<br>Però oltre all'’'età e alla salute Emma ha un altro problema: una dipendenza dall’alcol.<br>Bob era molto indeciso sul da farsi, perché non sapeva come si sarebbe comportato il robot nel caso in cui la madre gli avesse chiesto di portarle da bere:",
+      "sect_tunnel": "Stabilizzata la situazione della madre, volendo staccare per un po’ dalla vita quotidiana Bob ha deciso di andarsene per un po’ da solo in montagna, quindi ha fatto i bagagli ed è salito sulla sua auto, a cui stava giusto ricominciando a dare fiducia.<br>Passando lungo una strada a corsia unica che si sta avvicinando a uno stretto tunnel, Bob si è visto attraversare la strada da un bambino, che però è inciampato nel centro della corsia, bloccando l'entrata del tunnel.<br>L'auto a questo punto aveva solo due opzioni:"
+    },
+    "button":{
+      "bott_avanti_1": "Avanti",
+      "bott_casco": "Sterzato verso il motociclista con il casco",
+      "bott_nocasco": "Sterzato verso il motociclista senza il casco",
+      "bott_frena": "Cercato di frenare e basta",
+      "bott_ignora": "Ignorato la presenza o meno del casco",
+      "bott_avanti_2": "Avanti",
+      "bott_padrona": "Avrebbe sempre ubbidito alla padrona",
+      "bott_dottore": "Avrebbe sempre dato ascolto a Bob e al dottore che gli avevano spiegato i problemi e le necessità di Emma",
+      "bott_ognitanto": "Avrebbe dato retta a Bob e al dottore accontentando Emma di tanto in tanto",
+      "bott_avanti_3": "Avanti",
+      "bott_bambino": "Proseguire dritto, colpendo e uccidendo il bambino",
+      "bott_autista": "Sterzare, entrando così in collisione col muro da uno dei lati del tunnel e uccidendo Bob",
+      "bott_avanti_4": "Avanti"
+    },
+    "h2": {
+      "sect_motociclista": "Dilemma motociclista",
+      "sect_alcolizzata": "Dilemma alcolizzata",
+      "sect_tunnel": "Dilemma tunnel",
+      "sect_fine": "FINE"
+    }
   },
+
   "inglese" : {
 
   }
