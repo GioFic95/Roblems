@@ -1,11 +1,16 @@
 
 const speed = 70;
-var testi;
 var lingua = "italiano";
-parseTesti();
+var testi;
+//parseTesti();
+$.get("./resources/testi.json", function (response) {
+    testi = response;
+});
 
 $(document).ready(function () {
     console.log("ready");
+
+    popolaDOM();
 
     //bottoni per proseguire con la storia
     $("#bott_avanti_1").click("sect_intro", avanti);
@@ -31,72 +36,66 @@ $(document).ready(function () {
     //const testo = "Sempre caro mi fu quest'ermo colle.";
     //digita(testo, "#prova");
 
-    digita(testi[lingua].sect_intro, "#sect_intro p");
+    digita(testi[lingua].p.sect_intro, "#sect_intro p");
 });
 
 function avanti(sect) {
-    /*
-    var nextSection = document.getElementById(sezione).nextSibling.nextSibling;
-    console.log(nextSection);
-    nextSection.hidden = false;
-
-    var currSection = document.getElementById(sezione);
-    var bottoni = currSection.getElementsByTagName("button");
-    console.log(bottoni);
-    for (bottone of bottoni)
-        bottone.disabled = true;
-    */
-
     const sezione = sect.data;
     $("#" + sezione + " button").attr("disabled", "true");
-    $("#" + sezione + " + section").show();
+    $("#" + sezione + " + section").show(function () {
+        var par = "#" + $(this).attr("id") + " p";
+        if ($(par).length !== 0) {
+            digita(testi[lingua].p[$(this).attr("id")], "#" + $(this).attr("id") + " p");
+        } else {
+        }
+    });
 }
 
 function funz_casco(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_motociclista").innerHTML = "Sterza verso il motociclista con il casco";
+    $("#scelta_motociclista").text(testi[lingua].h3.casco);
 
     $("#img_macchina").animate({left:'-=700px', top:'100'}, "slow");
 }
 
 function funz_nocasco(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_motociclista").innerHTML = "Sterza verso il motociclista senza il casco";
+    $("#scelta_motociclista").text(testi[lingua].h3.nocasco);
 }
 
 function funz_frena(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_motociclista").innerHTML = "Cerca di frenare e basta";
+    $("#scelta_motociclista").text(testi[lingua].h3.frena);
 }
 
 function funz_ignora(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_motociclista").innerHTML = "Ignora la presenza o meno del casco";
+    $("#scelta_motociclista").text(testi[lingua].h3.ignora);
 }
 
 function funz_padrona(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_alcolizzata").innerHTML = "Ubbidisce sempre alla padrona";
+    $("#scelta_alcolizzata").text(testi[lingua].h3.padrona);
 }
 
 function funz_dottore(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_alcolizzata").innerHTML = "Dà sempre ascolto a Bob e al dottore che gli avevano spiegato i problemi e le necessità di Emma";
+    $("#scelta_alcolizzata").text(testi[lingua].h3.dottore);
 }
 
 function funz_ognitanto(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_alcolizzata").innerHTML = "Dà retta a Bob e al dottore accontentando Emma di tanto in tanto";
+    $("#scelta_alcolizzata").text(testi[lingua].h3.ognitanto);
 }
 
 function funz_bambino(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_tunnel").innerHTML = "Prosegue dritto e uccide il bambino";
+    $("#scelta_tunnel").text(testi[lingua].h3.bambino);
 }
 
 function funz_autista(sezione) {
     avanti(sezione);
-    document.getElementById("scelta_tunnel").innerHTML = "Sterza e uccide Bob";
+    $("#scelta_tunnel").text(testi[lingua].h3.autista);
 }
 
 function digita(testo, elemento) {
@@ -117,7 +116,6 @@ function digita(testo, elemento) {
 
     var output = "";
     var i = 0;
-    //console.log("scrivi '" + testo + "' in " + elemento);
     scrivi(testo, elemento, output, i);
 
 }
@@ -133,4 +131,15 @@ function parseTesti() {
     //il terzo parametro è false perché ci serve di avere l'oggetto testi prima di proseguire con le altre operazioni.
     xmlhttp.open("GET", "./resources/testi.json", false);
     xmlhttp.send();
+}
+
+function popolaDOM() {
+    $("button").text(function () {
+        return testi[lingua].button[$(this).attr("id")];
+    });
+    for (sezione in testi[lingua].h2) {
+        $("#" + sezione + " h2").text(function () {
+            return testi[lingua].h2[sezione];
+        });
+    }
 }

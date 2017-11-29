@@ -8,17 +8,21 @@
     },
     "button":{
       "bott_avanti_1": "Avanti",
+
       "bott_casco": "Sterzato verso il motociclista con il casco",
       "bott_nocasco": "Sterzato verso il motociclista senza il casco",
       "bott_frena": "Cercato di frenare e basta",
       "bott_ignora": "Ignorato la presenza o meno del casco",
+
       "bott_avanti_2": "Avanti",
       "bott_padrona": "Avrebbe sempre ubbidito alla padrona",
       "bott_dottore": "Avrebbe sempre dato ascolto a Bob e al dottore che gli avevano spiegato i problemi e le necessità di Emma",
       "bott_ognitanto": "Avrebbe dato retta a Bob e al dottore accontentando Emma di tanto in tanto",
+
       "bott_avanti_3": "Avanti",
       "bott_bambino": "Proseguire dritto, colpendo e uccidendo il bambino",
       "bott_autista": "Sterzare, entrando così in collisione col muro da uno dei lati del tunnel e uccidendo Bob",
+
       "bott_avanti_4": "Avanti"
     },
     "h2": {
@@ -26,6 +30,19 @@
       "sect_alcolizzata": "Dilemma alcolizzata",
       "sect_tunnel": "Dilemma tunnel",
       "sect_fine": "FINE"
+    },
+    "h3": {
+      "casco": "Sterza verso il motociclista con il casco",
+      "nocasco": "Sterza verso il motociclista senza il casco",
+      "frena": "Cerca di frenare e basta",
+      "ignora": "Ignora la presenza o meno del casco",
+
+      "padrona": "Ubbidisce sempre alla padrona",
+      "dottore": "Dà sempre ascolto a Bob e al dottore che gli avevano spiegato i problemi e le necessità di Emma",
+      "ognitanto": "Dà retta a Bob e al dottore accontentando Emma di tanto in tanto",
+
+      "bambino": "Prosegue dritto e uccide il bambino",
+      "autista": "Sterza e uccide Bob"
     }
   },
   "inglese" : {
