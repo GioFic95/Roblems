@@ -2,10 +2,13 @@
 const speed = 70;
 var lingua = "italiano";
 var testi;
-//parseTesti();
+parseTesti();
+
+/*   Asicrono, non funziona.
 $.get("./resources/testi.json", function (response) {
     testi = response;
 });
+ */
 
 $(document).ready(function () {
     console.log("ready");
@@ -121,6 +124,7 @@ function digita(testo, elemento) {
 }
 
 function parseTesti() {
+    /*
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -131,6 +135,17 @@ function parseTesti() {
     //il terzo parametro è false perché ci serve di avere l'oggetto testi prima di proseguire con le altre operazioni.
     xmlhttp.open("GET", "./resources/testi.json", false);
     xmlhttp.send();
+    */
+
+    $.ajax({
+        url: "./resources/testi.json",
+        async: false,
+        dataType: "json"
+    }).done(function(d) {
+        testi = d;
+    }).fail(function() {
+        console.log("caricamento dej JSON fallito :(");
+    });
 }
 
 function popolaDOM() {
