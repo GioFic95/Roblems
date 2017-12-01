@@ -9,3 +9,4 @@ Le nostre fonti principali:
 3. [Il robot, una mente artificiale in un corpo artificiale](https://www.scienzainrete.it/contenuto/articolo/Il-robot-una-mente-artificiale-un-corpo-artificiale)
 4. [Grafico sunburst](http://bl.ocks.org/wizicer/f662a0b04425fc0f7489)
 5. [Caricamento json](http://requirejs.org/docs/api.html#defsimple)
+6. [Geolocalizzazione facile](http://jsfiddle.net/zK5FN/2/)

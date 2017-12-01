@@ -1,5 +1,5 @@
 {
-  "italiano": {
+  "Italiano": {
     "p": {
       "sect_intro": "Siamo nel 2050.<br>Bob, da ormai 15 anni, lavora in una grande azienda che produce robot, si è conquistato una buona posizione e conosce tutto quello che una persona può sperare di imparare sui robot in una sola vita.<br>Nonostante la sua esperienza, spesso le decisioni delle intelligenze artificiali lo lasciano perplesso e dubbioso.<br>Tu come vorresti che si comportasse l’IA in queste situazioni?",
       "sect_motociclista": "Qualche settimana fa, mentre come ogni mattina si stava facendo portare a lavoro dalla sua macchina a guida autonoma, è passato su un chiodo e uno pneumatico è scoppiato.<br>Davanti a lui c’erano due motociclisti: uno con il casco e uno senza. Se la macchina avesse sterzato a sinistra avrebbe colpito il primo e se avesse sterzato a destra avrebbe preso il secondo.<br>Nella frazione di secondo tra lo scoppio dello pneumatico e l’impatto con il motociclista Bob si è chiesto cosa avrebbe fatto la macchina:",
@@ -45,7 +45,7 @@
       "autista": "Sterza e uccide Bob"
     }
   },
-  "inglese" : {
+  "English" : {
     "p": {
       "sect_intro": "We're in 2050.<br>Bob, for 15 years, works in a big robot manufacturing company, has gained a good position and knows everything a person can hope to learn about robots in one life.<br>Despite his experience, often artificial intelligence decisions make him perplexed and doubtful.<br>How do you want the AI ​​to behave in these situations?",
       "sect_motociclista": "A few weeks ago, as he was working every morning on his own self-guided car, he went on a nail and a tire broke out. In front of him there were two motorcyclists: one with his helmet and one without. If the car had turned to the left would hit the first and if it had turned right it would take the second.<br>In the fraction of second between the tire burst and the impact with the biker Bob he wondered what the machine would do :",
@@ -53,29 +53,29 @@
       "sect_tunnel": "Stabilized her mother's situation, wanting to break away for a while from everyday life Bob decided to leave for a while alone in the mountains, so he made the luggage and climbed onto his car, which he was just starting to give confidence.<br>Passing along a single lane road that is approaching a narrow tunnel, Bob has seen crossing the road from a child, but he stumbled into the center of the lane, blocking the entrance of the tunnel.<br>The car at this point had only two options:"
     },
     "button":{
-      "bott_avanti_1": "Come on",
+      "bott_avanti_1": "Next",
 
       "bott_casco": "Steering to the biker with the helmet",
       "bott_nocasco": "Steed to the biker without helmet",
       "bott_frena": "Trying to curb enough",
       "bott_ignora": "Ignored the presence or not of the helmet",
 
-      "bott_avanti_2": "Come on",
+      "bott_avanti_2": "Next",
       "bott_padrona": "He would always obey the mistress",
       "bott_dottore": "He would always listen to Bob and the doctor who explained to him the problems and needs of Emma",
       "bott_ognitanto": "He would have given Bob and the doctor content to Emma from time to time",
 
-      "bott_avanti_3": "Come on",
+      "bott_avanti_3": "Next",
       "bott_bambino": "Continue straight, hitting and killing the baby",
       "bott_autista": "Control, thus colliding with the wall from one of the sides of the tunnel and killing Bob",
 
-      "bott_avanti_4": "Come on"
+      "bott_avanti_4": "Next"
     },
     "h2": {
       "sect_motociclista": "Dilemma biker",
       "sect_alcolizzata": "Alcoholic Dilemma",
       "sect_tunnel": "Dilemma tunnel",
-      "sect_fine": "END"
+      "sect_fine": "THE END"
     },
     "h3": {
       "casco": "Steer towards the biker with the helmet",
