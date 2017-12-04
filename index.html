@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="resources/jquery-3.2.1.min.js"></script>
+    <script src="index.js" language="JavaScript" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="ProgettoRoblems.css" />
+    <link rel="shortcut icon" href="resources/icona.png" />
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpuShiDSi1Hq1WKc-O9FMXRp_2eivSLgg&callback=init"></script>
+</head>
+<body>
+    <div class="main">
+        <h1><span id="rob">Rob</span>lems</h1>
+        <p><b>Ti trovi qui:</b><br><span id="qui"></span></p>
+        <form id="form" action="ProgettoRoblems%20-%20jquery.html" hidden>
+            <label> Vuoi cambiare lingua?
+                <select name="lingua">
+                    <option value="English">English</option>
+                    <option value="Italiano" >Italiano</option>
+                </select>
+            </label>
+            <input type="submit" value="Start">
+        </form>
+    </div>
+    <div class="navigation">
+        <a id="about">About</a>
+        <a id="credits">Credits</a>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="close">&times;</span>
+                <h2>Credits</h2>
+            </div>
+            <div class="modal-body">
+                <div lang="ita">
+                    <p>Pagina web realizzata da:</p>
+                    <ul>
+                        <li>Simone D'Amico</li>
+                        <li>Giovanni Ficarra</li>
+                        <li>Marco Villari</li>
+                    </ul>
+                    <p>Icona: <i>Robot by Vladimir Belochkin from the Noun Project</i></p>
+                </div>
+                <div lang="eng" hidden>
+                    <p>Web page by:</p>
+                    <ul>
+                        <li>Simone D'Amico</li>
+                        <li>Giovanni Ficarra</li>
+                        <li>Marco Villari</li>
+                    </ul>
+                    <p>Icon: <i>Robot by Vladimir Belochkin from the Noun Project</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

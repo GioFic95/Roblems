@@ -1,9 +1,8 @@
 
 const speed = 70;
-var lingua = "Italiano";
 var testi;
+var lingua;
 var geocoder;
-var latlng;
 parseTesti();
 
 /*   Asicrono, non funziona.
@@ -22,7 +21,8 @@ $(document).ready(function () {
         window.alert("la geolocalizzazione non funziona");
     }
     */
-    setTimeout(impostaLingua, 1000);
+    //setTimeout(impostaLingua, 1000);
+    popolaDOM();
 
     //bottoni per proseguire con la storia
     $("#bott_avanti_1").click("sect_intro", avanti);
@@ -159,6 +159,10 @@ function parseTesti() {
 }
 
 function popolaDOM() {
+    var searchParams = new URLSearchParams(window.location.search);
+    lingua = searchParams.get('lingua');
+    console.log(lingua);
+
     $("button").text(function () {
         return testi[lingua].button[$(this).attr("id")];
     });
@@ -168,55 +172,4 @@ function popolaDOM() {
         });
     }
     console.log("popolaDom");
-}
-
-function init() {
-    geocoder = new google.maps.Geocoder;
-    //latlng = {lat: 41.9000, lng: 12.4833};
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            latlng = {lat: position.coords.latitude, lng: position.coords.longitude};
-        });
-    } else {
-        window.alert("Geolocation is not supported by this browser.");
-    }
-    console.log("init");
-    console.log("posizione: " + latlng)
-}
-
-function impostaLingua() {
-    geocoder.geocode({'location': latlng}, function(results, status) {
-        if (status === 'OK') {
-            if (results[0]) {
-                //console.log(results[0].formatted_address);
-                var types = ["country", "political"];
-                for (var i=0; i<results[0].address_components.length; i++) {
-                    var tipi = results[0].address_components[i].types;
-                    //console.log(tipi);
-                    var is_same = tipi.length === types.length && tipi.every(function(element, index) {
-                        return element === types[index];
-                    });
-                    if (is_same) {
-                        var stato = results[0].address_components[i].long_name;
-                        break;
-                    }
-                }
-                //console.log(results[0]);
-                console.log("Stato: " + stato);
-                //$("#geolocal").text("Stato: " + stato);
-                console.log(lingua);
-                if (stato !== "Italia")
-                    lingua = "Inglese";
-
-                popolaDOM();
-                return true;
-            } else {
-                window.alert('No results found');
-                return false;
-            }
-        } else {
-            window.alert('Geocoder failed due to: ' + status);
-            return false;
-        }
-    });
 }
