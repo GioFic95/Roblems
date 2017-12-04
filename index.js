@@ -61,12 +61,20 @@ function impostaLingua() {
 
 $(document).ready(function () {
     $("#credits").click(function () {
-
         $("#myModal").css("display", "block");
     });
-    $("#close").click(function () {
 
-        $("#myModal").css("display", "none");
+    $("#close").click(function () {
+        //$("#myModal").css("display", "none");
+        $("#myModal").animate({
+            left:"100vw",
+            opacity:0
+        }, "slow", function () {
+            $("#myModal").hide().css({
+                left:0,
+                opacity:1
+            });
+        });
     });
 
     // When the user clicks anywhere outside of the modal, close it

@@ -121,13 +121,6 @@ ul {
     font: 16px "Roboto";
 }
 
-.modal-content {
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatebottom;
-    animation-duration: 0.4s;
-}
-
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
@@ -137,16 +130,6 @@ ul {
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-}
-
-@-webkit-keyframes animatebottom {
-    from {top:0; opacity:1}
-    to {top:1000px; opacity:0}
-}
-
-@keyframes animatebottom {
-    from {top:0; opacity:1}
-    to {top:1000px; opacity:0}
 }
 
 /* The Close Button */
