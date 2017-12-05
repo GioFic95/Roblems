@@ -61,29 +61,42 @@ function impostaLingua() {
 
 $(document).ready(function () {
     $("#credits").click(function () {
-        $("#myModal").css("display", "block");
+        $("#finestra-credits").show().children().show();
     });
 
-    $("#close").click(function () {
-        //$("#myModal").css("display", "none");
-        $("#myModal").animate({
+    $("#about").click(function () {
+        $("#finestra-about").show().children().show();
+    });
+
+    $(".close").click(nascondiModal);
+
+    // When the user clicks anywhere outside of the modal, close it
+    var modal1 = document.getElementById("finestra-credits");
+    var modal2 = document.getElementById("finestra-about");
+    window.onclick = function(event) {
+        if (event.target === modal1 || event.target === modal2) {
+            nascondiModal();
+        }
+    };
+
+    function nascondiModal() {
+        $(".modal-content").animate({
             left:"100vw",
             opacity:0
         }, "slow", function () {
-            $("#myModal").hide().css({
+            $(".modal-content").hide().css({
                 left:0,
                 opacity:1
             });
         });
-    });
-
-    // When the user clicks anywhere outside of the modal, close it
-    var modal = document.getElementById('myModal');
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    };
+        $(".modal").animate({
+            opacity:0
+        }, "slow", function () {
+            $(".modal").hide().css({
+                opacity:1
+            });
+        });
+    }
 
     $("select[name='lingua']").change(function (e) {
         if (e.target.value === "Italiano") {

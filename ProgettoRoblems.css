@@ -133,16 +133,16 @@ ul {
 }
 
 /* The Close Button */
-#close {
+.close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-#close:hover,
-#close:focus {
-    color: #000;
+.close:hover,
+.close:focus {
+    color: #b30000;
     text-decoration: none;
     cursor: pointer;
 }
