@@ -23,41 +23,41 @@ img {
 }
 
 p {
-    font: 18px Roboto;
+    font: 18px "Roboto", sans-serif;
     color: #d9d9d9;
 }
 
 h1 {
-    font: 72px "Roboto";
+    font: 72px "Roboto", sans-serif;
     color: black;
     text-align: center;
     margin-bottom: 50px;
 }
 
 #rob {
-    font: 72px "Roboto Slab";
+    font: 72px "Roboto Slab", serif;
     color: #5d5d5d;
 }
 
 h2 {
-    font: 28px "Roboto Slab";
+    font: 28px "Roboto Slab", serif;
     color: white;
     margin-top: 50px;
 }
 
 h3 {
-    font: 20px "Roboto Slab";
+    font: 20px "Roboto Slab", serif;
     color: #f5f5f5;
     margin-top: 40px;
 }
 
 ul {
     color: white;
-    font: 14px "Roboto";
+    font: 14px "Roboto", sans-serif;
 }
 
 label {
-    font: 15px Roboto;
+    font: 15px "Roboto", sans-serif;
     margin-top: 5px;
 }
 
@@ -116,7 +116,7 @@ button:hover, input[type="submit"]:hover {
     text-decoration: none;
     padding: 20px;
     color: #ddd;
-    font: 18px "Roboto";
+    font: 18px "Roboto", sans-serif;
 }
 
 .navigation a:hover {
@@ -153,7 +153,7 @@ button:hover, input[type="submit"]:hover {
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
-    font: 16px "Roboto";
+    font: 16px "Roboto", sans-serif;
 }
 
 /* Add Animation */
