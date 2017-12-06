@@ -10,6 +10,10 @@ body.long {
     height: 5000px;
 }
 
+body.adapt {
+    height: 100%;
+}
+
 div.main {
     margin: 70px;
 }
@@ -50,6 +54,10 @@ h3 {
 ul {
     color: white;
     font: 14px "Roboto";
+}
+
+label {
+    font: 15px Roboto;
 }
 
 .avanti {

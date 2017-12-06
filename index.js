@@ -42,18 +42,20 @@ function impostaLingua() {
                     $('div[lang="ita"]').hide();
                 }
 
-                //popolaDOM(); va spostato!!!
                 $("#qui").html("lat " + latlng.lat + ", lng " + latlng.lng + "<br>" + results[0].formatted_address);
                 $('select option[value='+ lingua +']').attr("selected",true);
                 $("#form").show();
-
                 return true;
             } else {
                 window.alert('No results found');
+                $("#qui").html("<i>Posizione non accessibile</i>");
+                $("#form").show();
                 return false;
             }
         } else {
             window.alert('Geocoder failed due to: ' + status);
+            $("#qui").html("<i>Posizione non accessibile</i>");
+            $("#form").show();
             return false;
         }
     });
