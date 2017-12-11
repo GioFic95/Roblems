@@ -1,5 +1,5 @@
 
-const speed = 70;
+const speed = 50;
 var testi;
 var lingua;
 var geocoder;
@@ -15,6 +15,8 @@ $(document).ready(function () {
     $("#bott_avanti_2").click("esito_motociclista", avanti);
     $("#bott_avanti_3").click("esito_alcolizzata", avanti);
     $("#bott_avanti_4").click("esito_tunnel", avanti);
+    $("#bott_avanti_5").click("esito_colpa", avanti);
+    $("#bott_avanti_6").click("esito_diritti", avanti);
 
     //bottoni per la scelta del dilemma motociclista
     $("#bott_casco").click("sect_motociclista", funz_casco);
@@ -22,10 +24,19 @@ $(document).ready(function () {
     $("#bott_frena").click("sect_motociclista", funz_frena);
     $("#bott_ignora").click("sect_motociclista", funz_ignora);
 
+    //bottoni per la scelta del dilemma colpa
+    $("#bott_sviluppatore").click("sect_colpa", funz_sviluppatore);
+    $("#bott_proprietario").click("sect_colpa", funz_proprietario);
+    $("#bott_robot").click("sect_colpa", funz_robot);
+
     //bottoni per la scelta del dilemma alcolizzata
     $("#bott_padrona").click("sect_alcolizzata", funz_padrona);
     $("#bott_dottore").click("sect_alcolizzata", funz_dottore);
     $("#bott_ognitanto").click("sect_alcolizzata", funz_ognitanto);
+
+    //bottoni per la scelta del dilemma diritti
+    $("#bott_si").click("sect_diritti", funz_si);
+    $("#bott_no").click("sect_diritti", funz_no);
 
     //bottoni per la scelta del dilemma tunnel
     $("#bott_bambino").click("sect_tunnel", funz_bambino);
@@ -192,6 +203,31 @@ function funz_bambino(sezione) {
 function funz_autista(sezione) {
     avanti(sezione);
     $("#scelta_tunnel").text(testi[lingua].h3.autista);
+}
+
+function funz_sviluppatore(sezione) {
+    avanti(sezione);
+    $("#scelta_colpa").text(testi[lingua].h3.sviluppatore);
+}
+
+function funz_proprietario(sezione) {
+    avanti(sezione);
+    $("#scelta_colpa").text(testi[lingua].h3.proprietario);
+}
+
+function funz_robot(sezione) {
+    avanti(sezione);
+    $("#scelta_colpa").text(testi[lingua].h3.robot);
+}
+
+function funz_si(sezione) {
+    avanti(sezione);
+    $("#scelta_diritti").text(testi[lingua].h3.si);
+}
+
+function funz_no(sezione) {
+    avanti(sezione);
+    $("#scelta_diritti").text(testi[lingua].h3.no);
 }
 
 function digita(testo, elemento) {
