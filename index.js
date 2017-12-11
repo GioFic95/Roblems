@@ -1,5 +1,6 @@
 var latlng;
 var lingua = "Italiano";
+const errors = {1: "PERMISSION_DENIED", 2: "POSITION_UNAVAILABLE", 3:"TIMEOUT"};
 
 function init() {
     geocoder = new google.maps.Geocoder;
@@ -8,11 +9,26 @@ function init() {
         navigator.geolocation.getCurrentPosition(function (position) {
             latlng = {lat: position.coords.latitude, lng: position.coords.longitude};
             impostaLingua();
-        });
+        }, failedPosition);
     } else {
         window.alert("Geolocation is not supported by this browser.");
     }
     console.log("init");
+}
+
+function failedPosition(error) {
+    $.get("http://ipinfo.io", function (response) {
+        $("#qui").html(response.loc + ", " + response.city + ", " + response.country);
+        if (response.country !== "IT") {
+            lingua = "English";
+            $('div[lang="eng"]').show();
+            $('div[lang="ita"]').hide();
+        }
+        $("#form").show();
+    }, "jsonp").fail(function () {
+        $("#qui").html("<i>Posizione non accessibile a causa di " + error.constructor.name + "." + errors[error.code] + "</i>");
+        $("#form").show();
+    });
 }
 
 function impostaLingua() {
