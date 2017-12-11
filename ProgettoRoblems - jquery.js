@@ -42,7 +42,10 @@ $(document).ready(function () {
     $("#bott_bambino").click("sect_tunnel", funz_bambino);
     $("#bott_autista").click("sect_tunnel", funz_autista);
 
-    digita(testi[lingua].p.sect_intro, "#sect_intro p");
+    var testoSelezionato = testi[lingua].p.sect_intro;
+    digita(testoSelezionato, "#sect_intro p");
+    var msg = new SpeechSynthesisUtterance(testoSelezionato);
+    window.speechSynthesis.speak(msg);
 });
 
 function avanti(sect) {
@@ -51,8 +54,12 @@ function avanti(sect) {
     $("#" + sezione + " + section").show(function () {
         var par = "#" + $(this).attr("id") + " p";
         if ($(par).length !== 0) {
-            digita(testi[lingua].p[$(this).attr("id")], "#" + $(this).attr("id") + " p");
+            var testoSelezionato = testi[lingua].p[$(this).attr("id")];
+            digita(testoSelezionato, "#" + $(this).attr("id") + " p");
+            var msg = new SpeechSynthesisUtterance(testoSelezionato);
+            window.speechSynthesis.speak(msg);
         } else {
+            console.error("paragrafo vuoto");
         }
     });
 }
