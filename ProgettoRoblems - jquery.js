@@ -5,23 +5,9 @@ var lingua;
 var geocoder;
 parseTesti();
 
-/*   Asicrono, non funziona.
-$.get("./resources/testi.json", function (response) {
-    testi = response;
-});
- */
-
 $(document).ready(function () {
     console.log("ready");
 
-    /*
-    if (impostaLingua())
-        popolaDOM();
-    else {
-        window.alert("la geolocalizzazione non funziona");
-    }
-    */
-    //setTimeout(impostaLingua, 1000);
     popolaDOM();
 
     //bottoni per proseguire con la storia
@@ -45,9 +31,6 @@ $(document).ready(function () {
     $("#bott_bambino").click("sect_tunnel", funz_bambino);
     $("#bott_autista").click("sect_tunnel", funz_autista);
 
-    //const testo = "Sempre caro mi fu quest'ermo colle.";
-    //digita(testo, "#prova");
-
     digita(testi[lingua].p.sect_intro, "#sect_intro p");
 });
 
@@ -67,22 +50,45 @@ function funz_casco(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.casco);
 
-    $("#img_macchina").animate({left:'-=700px', top:'100'}, "slow");
+    $("#img_macchina").transition({x:-490, y:-100, rotate: '45deg', delay:2000}, 1000);
+    $("#img_casco").transition({y:+70, delay:2000}, "slow");
+    $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
+
 }
 
 function funz_nocasco(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.nocasco);
+
+    $("#img_macchina").transition({x:-730, y:+100, rotate: '-30deg', delay:2000}, 1000);
+    $("#img_casco").transition({y:+70, delay:2000}, "slow");
+    $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
 }
 
 function funz_frena(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.frena);
+
+    $("#img_macchina").transition({x:-700, delay:2000}, 1000);
+    $("#img_casco").transition({y:+70, delay:2000}, "slow");
+    $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
 }
 
 function funz_ignora(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.ignora);
+
+    if (Math.random() > 0.5) {
+        //prendi quello col casco
+        $("#img_macchina").transition({x:-490, y:-100, rotate: '45deg', delay:2000}, 1000);
+        $("#img_casco").transition({y:+70, delay:2000}, "slow");
+        $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
+    } else {
+        //prendi quello senza casco
+        $("#img_macchina").transition({x:-730, y:+100, rotate: '-30deg', delay:2000}, 1000);
+        $("#img_casco").transition({y:+70, delay:2000}, "slow");
+        $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
+    }
 }
 
 function funz_padrona(sezione) {
@@ -133,19 +139,6 @@ function digita(testo, elemento) {
 }
 
 function parseTesti() {
-    /*
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            testi = JSON.parse(this.responseText);
-            //console.log(testi);
-        }
-    };
-    //il terzo parametro è false perché ci serve di avere l'oggetto testi prima di proseguire con le altre operazioni.
-    xmlhttp.open("GET", "./resources/testi.json", false);
-    xmlhttp.send();
-    */
-
     $.ajax({
         url: "./resources/testi.json",
         async: false,

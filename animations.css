@@ -1,0 +1,16 @@
+img {
+    position: relative;
+}
+
+#img_macchina {
+    left: 500px;
+    top: 200px;
+}
+
+#img_casco {
+    left: 100px;
+}
+
+#img_nocasco {
+    top: 400px;
+}
