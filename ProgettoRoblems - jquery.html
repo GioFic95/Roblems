@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Roblems</title>
     <script src="resources/jquery-3.2.1.min.js"></script>
+    <script src="resources/jquery.transit.min.js"></script>
     <script src="ProgettoRoblems - jquery.js" language="JavaScript" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="ProgettoRoblems.css" />
+    <link rel="stylesheet" type="text/css" href="animations.css " />
     <link rel="shortcut icon" href="resources/icona.png" />
 </head>
 
@@ -33,9 +35,11 @@
         <section id="esito_motociclista" hidden>
             <!-- contenuto dipendente dalla scelta -->
             <h3 id="scelta_motociclista"></h3>
-            <img alt="motociclista senza casco" src="resources/moto_nocasco.png" id="img_nocasco">
-            <img alt="motociclista con casco" src="resources/moto_casco.png" id="img_casco">
-            <img alt="car" src="resources/macchina.png" id="img_macchina">
+            <div class="box-immagini">
+                <img height="190px" alt="motociclista senza casco" src="resources/pngperanimazioni/motonocasco.png" id="img_nocasco">
+                <img height="190px" alt="motociclista con casco" src="resources/pngperanimazioni/motocasco.png" id="img_casco">
+                <img width="335" alt="car" src="resources/pngperanimazioni/macchina.png" id="img_macchina">
+            </div>
             <br>
             <a href="#sect_alcolizzata"><button class="avanti" id="bott_avanti_2"></button></a>
         </section>
@@ -51,8 +55,16 @@
         <section id="esito_alcolizzata" hidden>
             <!-- contenuto dipendente dalla scelta -->
             <h3 id="scelta_alcolizzata"></h3>
-            <img width="100" height="100" alt="alcolizzata" src="resources/noun_641163_cc.svg">
-            <img width="100" height="100" alt="robot" src="resources/noun_860002_cc.svg">
+            <div class="box-immagini">
+                <div id="div-alcolizzata">
+                    <img height="135" alt="alcolizzata" src="resources/pngperanimazioni/vecchiavino.png" id="img_vecchiavino">
+                    <img height="135" alt="alcolizzata" src="resources/pngperanimazioni/vecchianovino.png" id="img_vecchianovino">
+                </div>
+                <div id="div-robot">
+                    <img height="170" alt="robot" src="resources/pngperanimazioni/robotvino.png" id="img_robotvino">
+                    <img height="170" alt="robot" src="resources/pngperanimazioni/robotnovino.png" id="img_robotnovino">
+                </div>
+            </div>
             <a href="#sect_tunnel"><button class="avanti" id="bott_avanti_3"></button></a>
         </section>
 
@@ -66,8 +78,11 @@
         <section id="esito_tunnel" hidden>
             <!-- contenuto dipendente dalla scelta -->
             <h3 id="scelta_tunnel"></h3>
-            <img width="100" height="100" alt="alcolizzata" src="resources/noun_641163_cc.svg">
-            <img width="100" height="100" alt="motociclista senza casco" src="resources/noun_860002_cc.svg">
+            <div class="box-immagini">
+                <img width="100" height="100" alt="alcolizzata" src="resources/pngperanimazioni/bimbo.png">
+                <img width="100" height="100" alt="motociclista senza casco" src="resources/pngperanimazioni/tunnel.png">
+                <img alt="car" src="resources/pngperanimazioni/macchina.png" id="img_macchina_2">
+            </div>
             <a href="#sect_fine"><button class="avanti" id="bott_avanti_4"></button></a>
         </section>
 
