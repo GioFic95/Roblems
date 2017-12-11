@@ -94,16 +94,94 @@ function funz_ignora(sezione) {
 function funz_padrona(sezione) {
     avanti(sezione);
     $("#scelta_alcolizzata").text(testi[lingua].h3.padrona);
+
+    $("#img_vecchiavino").hide();
+    $("#img_robotnovino").hide();
+
+    $("#div-robot").transition({x:-600, delay:2000}, 2000, function () {
+        $("#img_vecchianovino").hide();
+        $("#img_vecchiavino").show();
+        $("#img_robotvino").hide();
+        $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
+    }).transition({x:300}, 2000, function () {
+        $("#img_vecchiavino").hide();
+        $("#img_vecchianovino").show();
+        $("#img_robotnovino").hide();
+        $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
+    }).transition({x:-600}, 2000, function () {
+        $("#img_vecchianovino").hide();
+        $("#img_vecchiavino").show();
+        $("#img_robotvino").hide();
+        $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
+    }).transition({x:+300}, 2000, function () {
+        $("#img_vecchiavino").hide();
+        $("#img_vecchianovino").show();
+        $("#img_robotnovino").hide();
+        $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
+    }).transition({x:-600}, 2000, function () {
+        $("#img_vecchianovino").hide();
+        $("#img_vecchiavino").show();
+        $("#img_robotvino").hide();
+        $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
+    }).transition({x:+300}, 2000, function () {
+        $("#img_vecchiavino").hide();
+        $("#img_vecchianovino").show();
+        $("#img_robotnovino").hide();
+        $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
+    });
 }
 
 function funz_dottore(sezione) {
     avanti(sezione);
     $("#scelta_alcolizzata").text(testi[lingua].h3.dottore);
+
+    $("#img_vecchiavino").hide();
+    $("#img_robotvino").hide();
+
+    $("#div-robot").transition({x:-600, delay:2000}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(-1)"});
+    }).transition({x:300}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(+1)"});
+    }).transition({x:-600}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(-1)"});
+    }).transition({x:+300}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(+1)"});
+    }).transition({x:-600}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(-1)"});
+    }).transition({x:+300}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(+1)"});
+    });
 }
 
 function funz_ognitanto(sezione) {
     avanti(sezione);
     $("#scelta_alcolizzata").text(testi[lingua].h3.ognitanto);
+
+    $("#img_vecchiavino").hide();
+    $("#img_robotvino").hide();
+
+    $("#div-robot").transition({x:-600, delay:2000}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(-1)"});
+    }).transition({x:300}, 2000, function () {
+        $("#img_robotnovino").hide();
+        $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
+
+    }).transition({x:-600}, 2000, function () {
+        $("#img_vecchianovino").hide();
+        $("#img_vecchiavino").show();
+        $("#img_robotvino").hide();
+        $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
+    }).transition({x:+300}, 2000, function () {
+        $("#img_vecchiavino").hide();
+        $("#img_vecchianovino").show();
+        $("#img_robotnovino").transition({transform: "scaleX(+1)"});
+
+    }).transition({x:-600}, 2000, function () {
+        $("#img_robotnovino").transition({transform: "scaleX(-1)"});
+    }).transition({x:300}, 2000, function () {
+        $("#img_robotnovino").hide();
+        $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
+    });
 }
 
 function funz_bambino(sezione) {
