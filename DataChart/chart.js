@@ -242,4 +242,158 @@ $(document).ready(function () {
             "onClickSegment": null
         }
     });
+
+    graficoScelta = new d3pie("graficoScelta", {
+        "size": {
+            "canvasHeight": 400,
+            "canvasWidth": 590,
+            "pieOuterRadius": "88%"
+        },
+        "data": {
+            "sortOrder": "value-asc",
+            "content": [
+                {
+                    "label": "Sviluppatore",
+                    "valToolTip": "La responsabilità è dello sviluppatore",
+                    "value": 43.2,
+                    "color": "#fcca46"
+                },
+                {
+                    "label": "Proprietario",
+                    "valToolTip": "La responsabilità è dello proprietario",
+                    "value": 21.7,
+                    "color": "#619b8a"
+                },
+                {
+                    "label": "Robot",
+                    "valToolTip": "La responsabilità è del robot",
+                    "value": 35.1,
+                    "color": "#8ecc51"
+                }
+            ]
+        },
+        "labels": {
+            "outer": {
+                "pieDistance": 20
+            },
+            "mainLabel": {
+                "font": "verdana",
+                "color": "black",
+                "fontSize": 15
+            },
+            "percentage": {
+                "color": "#000000",
+                "font": "verdana",
+                "fontSize": 15,
+                "decimalPlaces": 0
+            },
+            "lines": {
+                "enabled": true,
+                "color": "#cccccc"
+            },
+            "truncation": {
+                "enabled": true
+            }
+        },
+        "tooltips": {
+            "enabled": true,
+            "type": "placeholder",
+            "string": "{valToolTip}: {percentage}%"
+        },
+        "effects": {
+            "pullOutSegmentOnClick": {
+                "effect": "bounce",
+                "speed": 400,
+                "size": 10
+            }
+        },
+        "misc": {
+            "colors": {
+                "segmentStroke": "rgba(255, 255, 255, 0.5)"
+            },
+            "gradient": {
+                "enabled": true,
+                "percentage": 75,
+                "color": ""
+            }
+        },
+        "callbacks": {
+            "onMouseoutSegment": null,
+            "onClickSegment": null
+        }
+    });
+
+    graficoDiritti = new d3pie("graficoDiritti", {
+        "size": {
+            "canvasHeight": 400,
+            "canvasWidth": 590,
+            "pieOuterRadius": "88%"
+        },
+        "data": {
+            "sortOrder": "value-asc",
+            "content": [
+                {
+                    "label": "Si",
+                    "valToolTip": "Riconoscere ai robot gli stezzi diritti degli umani",
+                    "value": 73,
+                    "color": "#fe7f2d"
+                },
+                {
+                    "label": "No",
+                    "valToolTip": "Non riconoscere ai robot gli stezzi diritti degli umani",
+                    "value": 27,
+                    "color": "#8ecc51"
+                },
+            ]
+        },
+        "labels": {
+            "outer": {
+                "pieDistance": 20
+            },
+            "mainLabel": {
+                "font": "verdana",
+                "color": "black",
+                "fontSize": 15
+            },
+            "percentage": {
+                "color": "#000000",
+                "font": "verdana",
+                "fontSize": 15,
+                "decimalPlaces": 0
+            },
+            "lines": {
+                "enabled": true,
+                "color": "#cccccc"
+            },
+            "truncation": {
+                "enabled": true
+            }
+        },
+        "tooltips": {
+            "enabled": true,
+            "type": "placeholder",
+            "string": "{valToolTip}: {percentage}%"
+        },
+        "effects": {
+            "pullOutSegmentOnClick": {
+                "effect": "bounce",
+                "speed": 400,
+                "size": 10
+            }
+        },
+        "misc": {
+            "colors": {
+                "segmentStroke": "rgba(255, 255, 255, 0.5)"
+            },
+            "gradient": {
+                "enabled": true,
+                "percentage": 75,
+                "color": ""
+            }
+        },
+        "callbacks": {
+            "onMouseoutSegment": null,
+            "onClickSegment": null
+        }
+    });
 });
