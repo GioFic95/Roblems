@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="ProgettoRoblems.css" />
     <link rel="stylesheet" type="text/css" href="modal.css" />
-    <link rel="shortcut icon" href="resources/icona.png" />
+    <link rel="shortcut icon" href="resources/immagini/icona.png" />
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpuShiDSi1Hq1WKc-O9FMXRp_2eivSLgg&callback=init"></script>
 </head>
 <body>
@@ -22,12 +22,14 @@
                     <option value="English">English</option>
                 </select>
             </label><br>
+            <input type="hidden" name="volume" value="on">
             <input type="submit" value="Start">
         </form>
     </div>
     <div class="navigation">
         <a id="about">About</a>
         <a id="credits">Credits</a>
+        <a id="sound"><img src="resources/immagini/sound.png" height="47"></a>
     </div>
 
     <!-- Finestra Credits -->
@@ -46,7 +48,20 @@
                         <li>Giovanni Ficarra</li>
                         <li>Marco Villari</li>
                     </ul>
-                    <p>Icona: <i>Robot by Vladimir Belochkin from the Noun Project</i></p>
+                    <p>Librerie usate:</p>
+                    <ul>
+                        <li><a target="_blank" href="http://api.jquery.com/">JQuery</a></li>
+                        <li><a target="_blank" href="https://ipinfo.io/">Geolocalizzazione tramite IP</a></li>
+                        <li><a target="_blank" href="https://developers.google.com/maps/documentation/javascript/geocoding#ReverseGeocoding">Google Maps API - reverse geocoding</a></li>
+                        <li><a target="_blank" href="http://ricostacruz.com/jquery.transit/">Transit</a></li>
+                        <li><a target="_blank" href="http://d3pie.org/">d3pie</a></li>
+                    </ul>
+                    <p>Altre risorse:</p>
+                    <ul>
+                        <li>Icona del sito: <i>Robot by Vladimir Belochkin from the Noun Project</i></li>
+                        <li>Icone del volume: <i>Sound/No sound by Adrien Coquet from the Noun Project</i></li>
+                        <li>Immagini: <i>Marco Villari</i></li>
+                    </ul>
                 </div>
                 <div lang="eng" hidden>
                     <p>Web page by:</p>
@@ -55,7 +70,20 @@
                         <li>Giovanni Ficarra</li>
                         <li>Marco Villari</li>
                     </ul>
-                    <p>Icon: <i>Robot by Vladimir Belochkin from the Noun Project</i></p>
+                    <p>Used libraries:</p>
+                    <ul>
+                        <li><a target="_blank" href="http://api.jquery.com/">JQuery</a></li>
+                        <li><a target="_blank" href="https://ipinfo.io/">Geolocation via IP</a></li>
+                        <li><a target="_blank" href="https://developers.google.com/maps/documentation/javascript/geocoding#ReverseGeocoding">Google Maps API - reverse geocoding</a></li>
+                        <li><a target="_blank" href="http://ricostacruz.com/jquery.transit/">Transit</a></li>
+                        <li><a target="_blank" href="http://d3pie.org/">d3pie</a></li>
+                    </ul>
+                    <p>Other resources:</p>
+                    <ul>
+                        <li>Website icon: <i>Robot by Vladimir Belochkin from the Noun Project</i></li>
+                        <li>Volume icons: <i>Sound/No sound by Adrien Coquet from the Noun Project</i></li>
+                        <li>Images: <i>Marco Villari</i></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -67,7 +95,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close" id="close-about">&times;</span>
-                <h2>Credits</h2>
+                <h2>About</h2>
             </div>
             <div class="modal-body">
                 <div lang="ita">

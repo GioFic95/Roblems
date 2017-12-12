@@ -116,3 +116,6 @@ button:hover, input[type="submit"]:hover {
     cursor: pointer;
 }
 
+#sound {
+    padding: 5px;
+}

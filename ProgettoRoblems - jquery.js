@@ -1,7 +1,9 @@
 
-const speed = 50;
+const speed = 70;
+const lingueISO = {"Italiano": "it", "English": "en"};
 var testi;
 var lingua;
+var volume;
 var geocoder;
 parseTesti();
 
@@ -44,8 +46,13 @@ $(document).ready(function () {
 
     var testoSelezionato = testi[lingua].p.sect_intro;
     digita(testoSelezionato, "#sect_intro p");
-    var msg = new SpeechSynthesisUtterance(testoSelezionato);
-    window.speechSynthesis.speak(msg);
+    if (volume === "on") {
+        var msg = new SpeechSynthesisUtterance(testoSelezionato);
+        msg.lang = lingueISO[lingua];
+        window.speechSynthesis.speak(msg);
+    } else {
+        console.log("volume off");
+    }
 });
 
 function avanti(sect) {
@@ -56,8 +63,13 @@ function avanti(sect) {
         if ($(par).length !== 0) {
             var testoSelezionato = testi[lingua].p[$(this).attr("id")];
             digita(testoSelezionato, "#" + $(this).attr("id") + " p");
-            var msg = new SpeechSynthesisUtterance(testoSelezionato);
-            window.speechSynthesis.speak(msg);
+            if (volume === "on") {
+                var msg = new SpeechSynthesisUtterance(testoSelezionato);
+                msg.lang = lingueISO[lingua];
+                window.speechSynthesis.speak(msg);
+            } else {
+                console.log("volume off");
+            }
         } else {
             console.error("paragrafo vuoto");
         }
@@ -275,6 +287,7 @@ function parseTesti() {
 function popolaDOM() {
     var searchParams = new URLSearchParams(window.location.search);
     lingua = searchParams.get('lingua');
+    volume = searchParams.get('volume');
     console.log(lingua);
 
     $("button").text(function () {
