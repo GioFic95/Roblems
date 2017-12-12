@@ -227,16 +227,37 @@ function funz_autista(sezione) {
 function funz_sviluppatore(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.sviluppatore);
+
+    var pos1 = $("#img_sviluppatore").css("left");
+    setTimeout(function() {
+        $("#img_croce_colpa").css("left", pos1).slideDown();
+    }, 1000);
 }
 
 function funz_proprietario(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.proprietario);
+
+    var pos1 = $("#img_proprietario").css("left");
+    setTimeout(function() {
+        $("#img_croce_colpa").css("left", pos1).slideDown();
+    }, 1000);
 }
 
 function funz_robot(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.robot);
+
+    var xsinistra = $("#img_macchina_colpa").css("left");
+    var xdestra = $("#img_macchina_colpa").css("right");
+    var xcentro = xdestra.substr(0, xdestra.length-2) - xsinistra.substr(0, xsinistra.length-2);
+    var xtop = $("#img_macchina_colpa").css("top");
+    var xbottom = $("#img_macchina_colpa").css("bottom");
+    var xcentro = xtop.substr(0, xtop.length-2) - xbottom.substr(0, xbottom.length-2);
+
+    setTimeout(function() {
+        $("#img_croce_colpa").css("left", xcentro).css("top", ycentro).slideDown();
+    }, 1000);
 }
 
 function funz_si(sezione) {

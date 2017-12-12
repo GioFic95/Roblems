@@ -33,3 +33,22 @@ div.box-immagini {
     float: left;
     top: 35px;
 }
+
+#img_sviluppatore {
+    left: 50px;
+    position: absolute;
+}
+
+#img_proprietario {
+    left: 270px;
+    position: absolute;
+}
+
+#img_macchina_colpa {
+    left: 490px;
+    position: absolute;
+}
+
+#img_croce_colpa {
+    position: absolute;
+}
