@@ -81,10 +81,10 @@ $(document).ready(function () {
     $("#sound").click(function () {
         var valore = $("#form input[type=hidden]").val();
         if (valore === "on") {
-            $("#sound img").attr("src", "resources/no sound 2.png");
+            $("#sound img").attr("src", "resources/immagini/no sound 2.png");
             $("#form input[type=hidden]").val("off");
         } else if (valore === "off") {
-            $("#sound img").attr("src", "resources/sound.png");
+            $("#sound img").attr("src", "resources/immagini/sound.png");
             $("#form input[type=hidden]").val("on");
         }
     });

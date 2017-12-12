@@ -250,13 +250,13 @@ function funz_robot(sezione) {
 
     var xsinistra = $("#img_macchina_colpa").css("left");
     var xdestra = $("#img_macchina_colpa").css("right");
-    var xcentro = xdestra.substr(0, xdestra.length-2) - xsinistra.substr(0, xsinistra.length-2);
-    var xtop = $("#img_macchina_colpa").css("top");
-    var xbottom = $("#img_macchina_colpa").css("bottom");
-    var xcentro = xtop.substr(0, xtop.length-2) - xbottom.substr(0, xbottom.length-2);
+    var xcentro = xsinistra.substr(0, xsinistra.length-2) - xdestra.substr(0, xdestra.length-2);
+    var ytop = $("#img_macchina_colpa").css("top");
+    var ybottom = $("#img_macchina_colpa").css("bottom");
+    var ycentro = ybottom.substr(0, ybottom.length-2) - ytop.substr(0, ytop.length-2);
 
     setTimeout(function() {
-        $("#img_croce_colpa").css("left", xcentro).css("top", ycentro).slideDown();
+        $("#img_croce_colpa").css("left", 576).slideDown();
     }, 1000);
 }
 
