@@ -1,5 +1,5 @@
 
-const speed = 70;
+var speed;
 const lingueISO = {"Italiano": "it", "English": "en"};
 var testi;
 var lingua;
@@ -309,6 +309,7 @@ function popolaDOM() {
     var searchParams = new URLSearchParams(window.location.search);
     lingua = searchParams.get('lingua');
     volume = searchParams.get('volume');
+    speed = volume === "on" ? 70 : 40;
     console.log(lingua);
 
     $("button").text(function () {
