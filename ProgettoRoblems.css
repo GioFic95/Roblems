@@ -3,11 +3,11 @@ body {
     margin: 0;
     height: 100vh;
     background: -moz-linear-gradient(top right, #00537E 100%, #3AA17E 100%);
-    background: -webkit-gradient(linear, right top, left bottom, from(#00A99D), to(#93278F ));
+    background: -webkit-gradient(linear, right top, left bottom, from(#00A99D), to(#93278F));
 }
 
 body.long {
-    height: 5000px;
+    height: 7000px;
 }
 
 body.adapt {
@@ -83,8 +83,30 @@ button:hover, input[type="submit"]:hover {
     color: #ddd;
 }
 
-.avanti {
+button:disabled {
+    cursor: not-allowed;
+    color: #676767;
+}
 
+.avanti {
+    border-color: #451244;
+}
+
+.avanti:hover {
+    background-color: #451244;
+}
+
+.scelta {
+    border-color: #004742;
+}
+
+.scelta:hover {
+    background-color: #004742;
+}
+
+.avanti:hover:disabled, .scelta:hover:disabled {
+    background: rgba(0,0,0,0);
+    color: #676767;
 }
 
 #fine {
