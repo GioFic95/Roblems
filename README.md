@@ -25,3 +25,5 @@
 4. [Transit](http://ricostacruz.com/jquery.transit/)
 
 5. [d3pie](http://d3pie.org/)
+
+6. [Problema Edge](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/8993198/)

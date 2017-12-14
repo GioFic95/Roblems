@@ -248,13 +248,6 @@ function funz_robot(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.robot);
 
-    var xsinistra = $("#img_macchina_colpa").css("left");
-    var xdestra = $("#img_macchina_colpa").css("right");
-    var xcentro = xsinistra.substr(0, xsinistra.length-2) - xdestra.substr(0, xdestra.length-2);
-    var ytop = $("#img_macchina_colpa").css("top");
-    var ybottom = $("#img_macchina_colpa").css("bottom");
-    var ycentro = ybottom.substr(0, ybottom.length-2) - ytop.substr(0, ytop.length-2);
-
     setTimeout(function() {
         $("#img_croce_colpa").css("left", 576).slideDown();
     }, 1000);
@@ -263,11 +256,17 @@ function funz_robot(sezione) {
 function funz_si(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.si);
+
+    $("#img_politico").transition({x:450, delay:2000}, 2000).transition({transform: "scaleX(-1)"}).transition({x:-100}, 2000);
 }
 
 function funz_no(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.no);
+
+//    $("#img_politico").transition({x:450, delay:2000}, 2000);
+    $("#img_politico").transition({transform: "scaleX(-1)", delay:2000});
+  //  $("#img_politico").transition({x:-100}, 2000);
 }
 
 function digita(testo, elemento) {
