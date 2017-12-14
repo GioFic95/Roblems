@@ -258,8 +258,9 @@ function funz_si(sezione) {
     $("#scelta_diritti").text(testi[lingua].h3.si);
 
     $("#div1").transition({x:550, delay:2000}, 2000, function() {
+        $("#img_spunta_diritti").transition({x:80}, 1).transition({opacity:1}, 499);
         $("#img_politico").transition({transform: "scaleX(-1)"})
-    }).transition({x:0}, 2000, function() {
+    }).transition({x:0, delay:500}, 2000, function() {
         $("#img_politico").transition({transform: "scaleX(1)"})
     });
 }

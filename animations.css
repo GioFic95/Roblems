@@ -65,7 +65,7 @@ div.box-immagini {
     float: left;
 }
 
-#img_croce_diritti {
+#img_croce_diritti, #img_spunta_diritti {
     left: 400px;
     top: 35px;
     opacity: 0;
