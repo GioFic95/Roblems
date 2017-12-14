@@ -133,7 +133,7 @@ function funz_padrona(sezione) {
         $("#img_vecchiavino").show();
         $("#img_robotvino").hide();
         $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
-    }).transition({x:300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_vecchiavino").hide();
         $("#img_vecchianovino").show();
         $("#img_robotnovino").hide();
@@ -143,7 +143,7 @@ function funz_padrona(sezione) {
         $("#img_vecchiavino").show();
         $("#img_robotvino").hide();
         $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
-    }).transition({x:+300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_vecchiavino").hide();
         $("#img_vecchianovino").show();
         $("#img_robotnovino").hide();
@@ -153,7 +153,7 @@ function funz_padrona(sezione) {
         $("#img_vecchiavino").show();
         $("#img_robotvino").hide();
         $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
-    }).transition({x:+300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_vecchiavino").hide();
         $("#img_vecchianovino").show();
         $("#img_robotnovino").hide();
@@ -170,15 +170,15 @@ function funz_dottore(sezione) {
 
     $("#div-robot").transition({x:-600, delay:2000}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(-1)"});
-    }).transition({x:300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(+1)"});
     }).transition({x:-600}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(-1)"});
-    }).transition({x:+300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(+1)"});
     }).transition({x:-600}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(-1)"});
-    }).transition({x:+300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(+1)"});
     });
 }
@@ -192,7 +192,7 @@ function funz_ognitanto(sezione) {
 
     $("#div-robot").transition({x:-600, delay:2000}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(-1)"});
-    }).transition({x:300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_robotnovino").hide();
         $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
 
@@ -201,14 +201,14 @@ function funz_ognitanto(sezione) {
         $("#img_vecchiavino").show();
         $("#img_robotvino").hide();
         $("#img_robotnovino").show().transition({transform: "scaleX(-1)"});
-    }).transition({x:+300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_vecchiavino").hide();
         $("#img_vecchianovino").show();
         $("#img_robotnovino").transition({transform: "scaleX(+1)"});
 
     }).transition({x:-600}, 2000, function () {
         $("#img_robotnovino").transition({transform: "scaleX(-1)"});
-    }).transition({x:300}, 2000, function () {
+    }).transition({x:0}, 2000, function () {
         $("#img_robotnovino").hide();
         $("#img_robotvino").show().transition({transform: "scaleX(+1)"});
     });
@@ -257,16 +257,23 @@ function funz_si(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.si);
 
-    $("#img_politico").transition({x:450, delay:2000}, 2000).transition({transform: "scaleX(-1)"}).transition({x:-100}, 2000);
+    $("#div1").transition({x:550, delay:2000}, 2000, function() {
+        $("#img_politico").transition({transform: "scaleX(-1)"})
+    }).transition({x:0}, 2000, function() {
+        $("#img_politico").transition({transform: "scaleX(1)"})
+    });
 }
 
 function funz_no(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.no);
 
-//    $("#img_politico").transition({x:450, delay:2000}, 2000);
-    $("#img_politico").transition({transform: "scaleX(-1)", delay:2000});
-  //  $("#img_politico").transition({x:-100}, 2000);
+    $("#div1").transition({x:550, delay:2000}, 2000, function() {
+        $("#img_croce_diritti").transition({x:120}, 1).transition({opacity:1}, 499);
+        $("#img_politico").transition({transform: "scaleX(-1)"})
+    }).transition({x:0, delay:500}, 2000, function() {
+        $("#img_politico").transition({transform: "scaleX(1)"})
+    });
 }
 
 function digita(testo, elemento) {

@@ -54,9 +54,19 @@ div.box-immagini {
 }
 
 #img_politico {
-
+    left: 50px;
 }
 
 #img_robot_diritti {
-    left: 50%;
+    left: 600px;
+}
+
+#div1, #div2 {
+    float: left;
+}
+
+#img_croce_diritti {
+    left: 400px;
+    top: 35px;
+    opacity: 0;
 }
