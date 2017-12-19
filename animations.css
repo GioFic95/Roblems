@@ -57,11 +57,14 @@ div.box-immagini {
     left: 50px;
 }
 
-#img_robot_diritti {
+
+#div2 {
+    position: relative;
     left: 600px;
+    float: left;
 }
 
-#div1, #div2 {
+#div1 {
     float: left;
 }
 

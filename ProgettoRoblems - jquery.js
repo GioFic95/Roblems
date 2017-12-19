@@ -257,23 +257,35 @@ function funz_si(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.si);
 
-    $("#div1").transition({x:550, delay:2000}, 2000, function() {
-        $("#img_spunta_diritti").transition({x:80}, 1).transition({opacity:1}, 499);
-        $("#img_politico").transition({transform: "scaleX(-1)"})
+    $("#img_robotdiritti").hide();
+    $("#img_politiconofoglio").hide();
+
+
+    $("#div1").transition({x: 550, delay: 2000}, 2000, function () {
+        $("#img_spunta_diritti").transition({x: 80}, 1).transition({opacity: 1}, 499);
+        $("#img_robotnodiritti").hide();
+        $("#img_robotdiritti").transition({x: -20},{opacity: 1},1000).show();
+        $("#img_politicofoglio").hide();
+        $("#img_politiconofoglio").show().transition({transform: "scaleX(-1)"})
     }).transition({x:0, delay:500}, 2000, function() {
-        $("#img_politico").transition({transform: "scaleX(1)"})
+        $("#img_politiconofoglio").transition({transform: "scaleX(1)"})
     });
+
+
 }
 
 function funz_no(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.no);
 
+    $("#img_robotdiritti").hide();
+    $("#img_politicofoglio").hide();
+
     $("#div1").transition({x:550, delay:2000}, 2000, function() {
         $("#img_croce_diritti").transition({x:120}, 1).transition({opacity:1}, 499);
-        $("#img_politico").transition({transform: "scaleX(-1)"})
+        $("#img_politiconofoglio").transition({transform: "scaleX(-1)"})
     }).transition({x:0, delay:500}, 2000, function() {
-        $("#img_politico").transition({transform: "scaleX(1)"})
+        $("#img_politiconofoglio").transition({transform: "scaleX(1)"})
     });
 }
 
