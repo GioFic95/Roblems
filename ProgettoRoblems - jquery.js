@@ -214,16 +214,6 @@ function funz_ognitanto(sezione) {
     });
 }
 
-function funz_bambino(sezione) {
-    avanti(sezione);
-    $("#scelta_tunnel").text(testi[lingua].h3.bambino);
-}
-
-function funz_autista(sezione) {
-    avanti(sezione);
-    $("#scelta_tunnel").text(testi[lingua].h3.autista);
-}
-
 function funz_sviluppatore(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.sviluppatore);
@@ -288,6 +278,21 @@ function funz_no(sezione) {
         $("#img_politiconofoglio").transition({transform: "scaleX(1)"})
     });
 }
+
+function funz_bambino(sezione) {
+    avanti(sezione);
+    $("#scelta_tunnel").text(testi[lingua].h3.bambino);
+    $("#img_macchina2").transition({x:-460, delay:2000},600);
+
+}
+
+function funz_autista(sezione) {
+    avanti(sezione);
+    $("#scelta_tunnel").text(testi[lingua].h3.autista);
+    $("#img_macchina2").transition({x:-530, y:-200, rotate: '-22deg', delay:2000}, 1000);
+}
+
+
 
 function digita(testo, elemento) {
 
