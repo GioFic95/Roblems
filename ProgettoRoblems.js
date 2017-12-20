@@ -71,7 +71,7 @@ function avanti(sect) {
                 console.log("volume off");
             }
         } else {
-            console.error("paragrafo vuoto");
+            //console.error("paragrafo vuoto");
         }
     });
 }
@@ -252,7 +252,7 @@ function funz_si(sezione) {
 
 
     $("#div1").transition({x: 550, delay: 2000}, 2000, function () {
-        $("#img_spunta_diritti").transition({x: 80}, 1).transition({opacity: 1}, 499);
+        $("#img_spunta_diritti").transition({x: 50}, 1).transition({opacity: 1}, 499);
         $("#img_robotnodiritti").hide();
         $("#img_robotdiritti").transition({x: -20},{opacity: 1},1000).show();
         $("#img_politicofoglio").hide();
@@ -260,7 +260,6 @@ function funz_si(sezione) {
     }).transition({x:0, delay:500}, 2000, function() {
         $("#img_politiconofoglio").transition({transform: "scaleX(1)"})
     });
-
 
 }
 
@@ -282,6 +281,7 @@ function funz_no(sezione) {
 function funz_bambino(sezione) {
     avanti(sezione);
     $("#scelta_tunnel").text(testi[lingua].h3.bambino);
+    $("#img_bimbo").transition({y:-70, delay:2000}, 1000);
     $("#img_macchina2").transition({x:-460, delay:2000},600);
 
 }
@@ -289,6 +289,8 @@ function funz_bambino(sezione) {
 function funz_autista(sezione) {
     avanti(sezione);
     $("#scelta_tunnel").text(testi[lingua].h3.autista);
+
+    $("#img_bimbo").transition({y:-80, delay:2000}, 1000);
     $("#img_macchina2").transition({x:-530, y:-200, rotate: '-22deg', delay:2000}, 1000);
 }
 

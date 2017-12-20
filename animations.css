@@ -3,7 +3,12 @@ img {
 }
 
 div.box-immagini {
-    height: 100vh;
+     height: 100vh;
+     width: 92.4vw;
+ }
+
+div.box-immagini.small {
+    height: 50vh;
     width: 92.4vw;
 }
 
@@ -82,7 +87,7 @@ div.box-immagini {
 
 #img_bimbo {
     left: 20px;
-    top: 185px;
+    top: 210px;
 }
 
 #img_tunnel { top: 210px; }

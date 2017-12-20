@@ -1,14 +1,16 @@
 var latlng;
 var lingua = "Italiano";
+var geocoder;
+var online = false;
 const errors = {1: "PERMISSION_DENIED", 2: "POSITION_UNAVAILABLE", 3:"TIMEOUT"};
 
 function init() {
     geocoder = new google.maps.Geocoder;
-    //latlng = {lat: 41.9000, lng: 12.4833};
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             latlng = {lat: position.coords.latitude, lng: position.coords.longitude};
             impostaLingua();
+            online = true;
         }, failedPosition);
     } else {
         window.alert("Geolocation is not supported by this browser.");
@@ -78,6 +80,12 @@ function impostaLingua() {
 }
 
 $(document).ready(function () {
+    if (!online) {
+        $("#qui").html("<i>Posizione non accessibile: sei offline</i>");
+        $("#form").show();
+        console.log("offline");
+    }
+
     $("#sound").click(function () {
         var valore = $("#form input[type=hidden]").val();
         if (valore === "on") {
