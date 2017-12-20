@@ -1,8 +1,8 @@
 # Roblems
 ## Una storia interattiva sui dilemmi di roboetica
 
-[Il nostro documento](https://docs.google.com/document/d/1db1fxQ87VuaoGqahuS-Xp41Zukfy_B-QNmQ-Ao0APco/edit?usp=sharing)
-[Questo progetto online](https://f58cba66.ngrok.io/roblems)
+
+[Questo progetto online](http://4219be21.ngrok.io/roblems/)
 
 
 ####Le nostre fonti principali:
