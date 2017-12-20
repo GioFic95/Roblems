@@ -2,14 +2,15 @@
 body {
     margin: 0;
     height: 100vh;
-    background: -moz-linear-gradient(top right, #00537E 100%, #3AA17E 100%);
-    background: -webkit-gradient(linear, right top, left bottom, from(#00A99D), to(#93278F));
+    background-image: linear-gradient(to bottom left, #00A99D 0%, #93278F 100%);
 }
 
+/*Il body della pagina principale ha una lunghezza prefissata in modo da poter scorrere man mano si procede.*/
 body.long {
     height: 7000px;
 }
 
+/*Il body della pagina dei diagrammi si adatta alla dimensione del contenuto.*/
 body.adapt {
     height: 100%;
 }

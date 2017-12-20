@@ -4,6 +4,9 @@ var geocoder;
 var online = false;
 const errors = {1: "PERMISSION_DENIED", 2: "POSITION_UNAVAILABLE", 3:"TIMEOUT"};
 
+/**
+ * Funzione chiamata dalle Google Maps API per settare la posizione.
+ */
 function init() {
     geocoder = new google.maps.Geocoder;
     if (navigator.geolocation) {
@@ -18,6 +21,10 @@ function init() {
     console.log("init");
 }
 
+/**
+ * Funzione chiamata in caso di fallimento di {@link navigator.geolocation.getCurrentPosition}
+ * @param error
+ */
 function failedPosition(error) {
     $.get("http://ipinfo.io", function (response) {
         $("#qui").html(response.loc + ", " + response.city + ", " + response.country);
@@ -33,15 +40,17 @@ function failedPosition(error) {
     });
 }
 
+/**
+ * Imposta la lingua in base alla posizione ottenuta con Geolocation,
+ * facendo reverse geocoding tramite le API di Google Maps.
+ */
 function impostaLingua() {
     geocoder.geocode({'location': latlng}, function(results, status) {
         if (status === 'OK') {
             if (results[0]) {
-                //console.log(results[0].formatted_address);
                 var types = ["country", "political"];
                 for (var i=0; i<results[0].address_components.length; i++) {
                     var tipi = results[0].address_components[i].types;
-                    //console.log(tipi);
                     var is_same = tipi.length === types.length && tipi.every(function(element, index) {
                         return element === types[index];
                     });
@@ -50,9 +59,7 @@ function impostaLingua() {
                         break;
                     }
                 }
-                //console.log(results[0]);
                 console.log("Stato: " + stato);
-                //$("#geolocal").text("Stato: " + stato);
                 console.log("lingua: " + lingua);
                 if (stato !== "Italia") {
                     lingua = "English";
@@ -60,6 +67,7 @@ function impostaLingua() {
                     $('div[lang="ita"]').hide();
                 }
 
+                //mostra la posizione, imposta la lingua corretta nel menu a tendina e mostra il form che lo contiene
                 $("#qui").html("lat " + latlng.lat + ", lng " + latlng.lng + "<br>" + results[0].formatted_address);
                 $('select option[value='+ lingua +']').attr("selected",true);
                 $("#form").show();
@@ -71,6 +79,7 @@ function impostaLingua() {
                 return false;
             }
         } else {
+            //se la posizione non è stata trovata, mostra un avviso e il form per permettere all'utente di sceglierla
             window.alert('Geocoder failed due to: ' + status);
             $("#qui").html("<i>Posizione non accessibile</i>");
             $("#form").show();
@@ -80,12 +89,15 @@ function impostaLingua() {
 }
 
 $(document).ready(function () {
+    //Se viene aperto il sito in locale e la connessione a internet non è disponibile,
+    // mostra il form per permettere all'utente di scegliere la lingua e andare avanti
     if (!online) {
         $("#qui").html("<i>Posizione non accessibile: sei offline</i>");
         $("#form").show();
         console.log("offline");
     }
 
+    //Cliccando sull'immagine dell'altoparlante il suono viene attivato/disattivato
     $("#sound").click(function () {
         var valore = $("#form input[type=hidden]").val();
         if (valore === "on") {
@@ -97,17 +109,20 @@ $(document).ready(function () {
         }
     });
 
+    //Mostra la finestra dei credits
     $("#credits").click(function () {
         $("#finestra-credits").show().children().show();
     });
 
+    //Mostra la finestra about
     $("#about").click(function () {
         $("#finestra-about").show().children().show();
     });
 
+    //Chiude la finestra aperta
     $(".close").click(nascondiModal);
 
-    // When the user clicks anywhere outside of the modal, close it
+    //Quando l'utente clicca fuori dal modal, chiudilo
     var modal1 = document.getElementById("finestra-credits");
     var modal2 = document.getElementById("finestra-about");
     window.onclick = function(event) {
@@ -116,6 +131,9 @@ $(document).ready(function () {
         }
     };
 
+    /**
+     * Esegue l'animazione di chiusura del modal.
+     */
     function nascondiModal() {
         $(".modal-content").animate({
             left:"100vw",
@@ -135,6 +153,7 @@ $(document).ready(function () {
         });
     }
 
+    //Cambia la lingua corrente in base alla scelta selezionata dall'utente.
     $("select[name='lingua']").change(function (e) {
         if (e.target.value === "Italiano") {
             $('div[lang="eng"]').hide();

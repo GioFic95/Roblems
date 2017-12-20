@@ -1,16 +1,19 @@
-
 var speed;
 const lingueISO = {"Italiano": "it", "English": "en"};
 var testi;
 var lingua;
 var volume;
-var geocoder;
+
+//Crea l'oggetto con i testi del sito a partire dal file testi.json
 parseTesti();
 
 $(document).ready(function () {
     console.log("ready");
 
+    //Popola il DOM con i testi nella lingua scelta dall'utente
     popolaDOM();
+
+    //Associa le opportune funzioni all'evento click dei bottoni
 
     //bottoni per proseguire con la storia
     $("#bott_avanti_1").click("sect_intro", avanti);
@@ -44,6 +47,7 @@ $(document).ready(function () {
     $("#bott_bambino").click("sect_tunnel", funz_bambino);
     $("#bott_autista").click("sect_tunnel", funz_autista);
 
+    //Fa comparire l'introduzione e avvia il relativo audio
     var testoSelezionato = testi[lingua].p.sect_intro;
     digita(testoSelezionato, "#sect_intro p");
     if (volume === "on") {
@@ -55,6 +59,11 @@ $(document).ready(function () {
     }
 });
 
+/**
+ * Disattiva i bottoni della sezione passata come parametro e mostra la sezione successiva.
+ * Se c'è un testo nella sezione successiva, ne avvia l'animazione e la riproduzione.
+ * @param sect: la sezione corrente
+ */
 function avanti(sect) {
     const sezione = sect.data;
     $("#" + sezione + " button").attr("disabled", "true");
@@ -70,12 +79,15 @@ function avanti(sect) {
             } else {
                 console.log("volume off");
             }
-        } else {
-            //console.error("paragrafo vuoto");
         }
     });
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_casco(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.casco);
@@ -86,6 +98,11 @@ function funz_casco(sezione) {
 
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_nocasco(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.nocasco);
@@ -95,6 +112,11 @@ function funz_nocasco(sezione) {
     $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_frena(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.frena);
@@ -104,6 +126,12 @@ function funz_frena(sezione) {
     $("#img_nocasco").transition({y:-70, delay:2000}, "slow");
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente: decide in modo randomico se colpire
+ * il motociclista con il casco o quello senza.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_ignora(sezione) {
     avanti(sezione);
     $("#scelta_motociclista").text(testi[lingua].h3.ignora);
@@ -121,6 +149,11 @@ function funz_ignora(sezione) {
     }
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_padrona(sezione) {
     avanti(sezione);
     $("#scelta_alcolizzata").text(testi[lingua].h3.padrona);
@@ -161,6 +194,11 @@ function funz_padrona(sezione) {
     });
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_dottore(sezione) {
     avanti(sezione);
     $("#scelta_alcolizzata").text(testi[lingua].h3.dottore);
@@ -183,6 +221,12 @@ function funz_dottore(sezione) {
     });
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente: il robot soddisfa una volta la padrona e
+ * due Bob e il dottore.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_ognitanto(sezione) {
     avanti(sezione);
     $("#scelta_alcolizzata").text(testi[lingua].h3.ognitanto);
@@ -214,6 +258,11 @@ function funz_ognitanto(sezione) {
     });
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_sviluppatore(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.sviluppatore);
@@ -224,6 +273,11 @@ function funz_sviluppatore(sezione) {
     }, 1000);
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_proprietario(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.proprietario);
@@ -234,6 +288,11 @@ function funz_proprietario(sezione) {
     }, 1000);
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_robot(sezione) {
     avanti(sezione);
     $("#scelta_colpa").text(testi[lingua].h3.robot);
@@ -243,6 +302,11 @@ function funz_robot(sezione) {
     }, 1000);
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_si(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.si);
@@ -263,6 +327,11 @@ function funz_si(sezione) {
 
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_no(sezione) {
     avanti(sezione);
     $("#scelta_diritti").text(testi[lingua].h3.no);
@@ -278,6 +347,11 @@ function funz_no(sezione) {
     });
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_bambino(sezione) {
     avanti(sezione);
     $("#scelta_tunnel").text(testi[lingua].h3.bambino);
@@ -286,6 +360,11 @@ function funz_bambino(sezione) {
 
 }
 
+/**
+ * Va dalla sezione passata come parametro a quella successiva, con le animazioni.
+ * Gestisce l'animazione relativa alla scelta effettuata dall'utente.
+ * @param sezione: la sezione corrente con i bottoni per le scelte dell'utente.
+ */
 function funz_autista(sezione) {
     avanti(sezione);
     $("#scelta_tunnel").text(testi[lingua].h3.autista);
@@ -295,7 +374,11 @@ function funz_autista(sezione) {
 }
 
 
-
+/**
+ * Fa comparire il testo passato come primo parametro nell'elemento del DOM passato come secondo parametro.
+ * @param testo: testo da far comparire
+ * @param elemento: elemento in cui far comparire il testo
+ */
 function digita(testo, elemento) {
 
     function scrivi(testo, elemento, output, i) {
@@ -318,6 +401,9 @@ function digita(testo, elemento) {
 
 }
 
+/**
+ * Crea l'oggetto con i testi del sito a partire dal file testi.json.
+ */
 function parseTesti() {
     $.ajax({
         url: "./resources/testi.json",
@@ -331,6 +417,10 @@ function parseTesti() {
     });
 }
 
+/**
+ * Popola il DOM con i testi nella lingua scelta dall'utente, presi dall'oggetto creato da {@link parseTesti()},
+ * impostando la velocità di comparsa del testo.
+ */
 function popolaDOM() {
     var searchParams = new URLSearchParams(window.location.search);
     lingua = searchParams.get('lingua');

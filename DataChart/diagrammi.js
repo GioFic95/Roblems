@@ -2,6 +2,9 @@ var graficoMotociclista;
 var graficoAlcolizzata;
 var graficoTunnel;
 
+/**
+ * Costruisce i diagrammi creando oggetti d3pie (pie chart) usando la libreria <a target="_blank" href="http://d3pie.org/">d3pie</a>.
+ */
 $(document).ready(function () {
     graficoMotociclista = new d3pie("graficoMotociclista", {
         "size": {
