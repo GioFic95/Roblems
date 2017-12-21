@@ -28,6 +28,7 @@ function init() {
  */
 function failedPosition(error) {
     $.get("http://ipinfo.io", function (response) {
+        console.log(response);
         $("#qui").html(response.loc + ", " + response.city + ", " + response.country);
         if (response.country !== "IT") {
             lingua = "English";
