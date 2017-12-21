@@ -17,6 +17,7 @@ function init() {
         }, failedPosition);
     } else {
         window.alert("Geolocation is not supported by this browser.");
+        failedPosition(null);
     }
     console.log("init");
 }
@@ -35,9 +36,13 @@ function failedPosition(error) {
         }
         $("#form").show();
     }, "jsonp").fail(function () {
-        $("#qui").html("<i>Posizione non accessibile a causa di " + error.constructor.name + "." + errors[error.code] + "</i>");
+        if (error !== null)
+            $("#qui").html("<i>Posizione non accessibile a causa di " + error.constructor.name + "." + errors[error.code] + "</i>");
+        else
+            $("#qui").html("<i>Posizione non accessibile</i>");
         $("#form").show();
     });
+    online = true;
 }
 
 /**
