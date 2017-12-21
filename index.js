@@ -34,6 +34,7 @@ function failedPosition(error) {
             $('div[lang="eng"]').show();
             $('div[lang="ita"]').hide();
         }
+        $('select option[value='+ lingua +']').attr("selected",true);
         $("#form").show();
     }, "jsonp").fail(function () {
         if (error !== null)
