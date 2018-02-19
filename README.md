@@ -5,7 +5,7 @@
 [Questo progetto online](http://4219be21.ngrok.io/roblems/)
 
 
-####Le nostre fonti principali:
+### Le nostre fonti principali:
 1. [Open Roboethics](http://www.openroboethics.org/tag/dilemma/)
 
 2. [Untrafficked](http://bharatyatra.online/untrafficked/)
@@ -15,7 +15,7 @@
 4. [il nostro sondaggio](https://docs.google.com/forms/d/e/1FAIpQLSe22Y7tFkL20Nl_w9C5oPhhf6G9jHPCLENXxxRGriyaRdpVFQ/viewanalytics)
 
 
-####Librerie usate:
+### Librerie usate:
 1. [JQuery](http://api.jquery.com/)
 
 2. [Geolocalizzazione tramite IP](https://ipinfo.io/)
