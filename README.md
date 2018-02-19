@@ -2,7 +2,7 @@
 ## Una storia interattiva sui dilemmi di roboetica
 
 
-[Questo progetto online](http://4219be21.ngrok.io/roblems/)
+[Questo progetto online](https://giofic95.github.io/Roblems/)
 
 
 ### Le nostre fonti principali:
